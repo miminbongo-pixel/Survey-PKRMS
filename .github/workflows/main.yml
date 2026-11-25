@@ -14,9 +14,6 @@ permissions:
 jobs:
   build-android-apk:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: android-studio-project
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -59,7 +56,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: DHY-Explorer-v0.4.0-APK
-          path: android-studio-project/dist-apk/*.apk
+          path: dist-apk/*.apk
           retention-days: 30
 
       - name: Publish APK to GitHub Releases
@@ -74,8 +71,8 @@ jobs:
             - **`DHY-Explorer-v0.4.0-debug.apk`**: Siap diunduh dan langsung dipasang (install) pada perangkat Android.
             - **`DHY-Explorer-v0.4.0-release-unsigned.apk`**: Paket rilis untuk penandatanganan keystore produksi.
           files: |
-            android-studio-project/dist-apk/DHY-Explorer-v0.4.0-debug.apk
-            android-studio-project/dist-apk/DHY-Explorer-v0.4.0-release-unsigned.apk
+            dist-apk/DHY-Explorer-v0.4.0-debug.apk
+            dist-apk/DHY-Explorer-v0.4.0-release-unsigned.apk
           draft: false
           prerelease: false
 
