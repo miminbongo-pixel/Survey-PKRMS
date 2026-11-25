@@ -1,0 +1,6 @@
+{
+  "name": "GeoExplorer",
+  "description": "Aplikasi GIS lapangan Indonesia berbasis MapLibre dan pemilih zona UTM WGS 84 dengan fondasi proyek Android native Foundation 0.3.1.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
