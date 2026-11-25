@@ -29,6 +29,15 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: '11.0'
+          build-tools-version: '34.0.0'
+          api-level: 34
+          packages: |
+            platform-tools
+            platforms;android-34
+            build-tools;34.0.0
+          cache: true
 
       - name: Set up Gradle cache
         uses: gradle/actions/setup-gradle@v4
@@ -85,4 +94,3 @@ jobs:
 
       - name: Run unit tests, TypeScript lint, and Web build
         run: npm ci && npm test && npm run lint && npm run build
-
